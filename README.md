@@ -60,7 +60,7 @@ Below is a curated comparison of leading SaaS Enterprise Knowledge Base & Wiki p
 
 Open-source knowledge management systems provide full data ownership, privacy compliance (GDPR/HIPAA), self-hosting capability, and zero per-seat licensing fees.
 
-Below is the list of top active open-source projects, sorted by GitHub Star count (descending):
+Below is the list of top active open-source projects, sorted by GitHub Stars_Count (descending):
 
 - **[AppFlowy](https://github.com/AppFlowy-IO/AppFlowy)** [<img src="https://img.shields.io/github/stars/AppFlowy-IO/AppFlowy?style=social&color=white" alt="AppFlowy Stars"/>](https://github.com/AppFlowy-IO/AppFlowy/stargazers)  
   *Open-source Notion alternative built with Flutter and Rust. Local-first architecture with offline support, kanban boards, databases, and AI integration. License: AGPL-3.0.*
@@ -132,7 +132,7 @@ To build a production-grade self-hosted enterprise knowledge stack:
 Contributions are welcome! Please follow these simple guidelines:
 1. Fork this repository.
 2. Edit `README.md` to add/update entries (maintain table/list formatting).
-3. Ensure accurate details regarding pricing, star counts, and licenses.
+3. Ensure accurate details regarding pricing, Stars_Counts, and licenses.
 4. Submit a Pull Request (PR) with a brief summary of additions.
 
 See [Awesome List Guidelines](https://github.com/ishandutta2007/Awesome-Awesome-Awesome) for general contribution standards.
