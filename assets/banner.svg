@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0a0c10"/>
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="50%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#21262d" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#161b22" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 800; fill: #ffffff; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 20px; font-weight: 500; fill: #8b949e; }
+    .tag { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; fill: #58a6ff; }
+    .node-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #c9d1d9; }
+    
+    /* Dynamic Animations */
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: scale(0.98); }
+      50% { opacity: 0.8; transform: scale(1.02); }
+      100% { opacity: 0.3; transform: scale(0.98); }
+    }
+    
+    @keyframes float1 {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes float2 {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes dash {
+      to { stroke-dashoffset: -40; }
+    }
+
+    .animated-bg-circle { animation: pulse 6s ease-in-out infinite; transform-origin: center; }
+    .float-card-1 { animation: float1 5s ease-in-out infinite; }
+    .float-card-2 { animation: float2 6s ease-in-out infinite; }
+    .flowing-line { stroke-dasharray: 8, 8; animation: dash 2s linear infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="350" rx="16" fill="url(#bgGrad)"/>
+  <rect width="1200" height="350" rx="16" fill="none" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Dynamic Animated Background Elements -->
+  <circle class="animated-bg-circle" cx="150" cy="80" r="120" fill="#58a6ff" opacity="0.08" filter="url(#glow)" />
+  <circle class="animated-bg-circle" cx="1050" cy="270" r="140" fill="#bc8cff" opacity="0.08" filter="url(#glow)" />
+
+  <!-- Dynamic Knowledge Graph (Right Side Canvas) -->
+  <g opacity="0.6" class="float-card-2">
+    <!-- Graph Edges -->
+    <line x1="800" y1="100" x2="950" y2="70" stroke="#30363d" stroke-width="2"/>
+    <line x1="800" y1="100" x2="880" y2="180" stroke="#30363d" stroke-width="2"/>
+    <line x1="950" y1="70" x2="1080" y2="120" stroke="#30363d" stroke-width="2"/>
+    <line x1="880" y1="180" x2="1050" y2="220" stroke="#30363d" stroke-width="2"/>
+    <line x1="950" y1="70" x2="1050" y2="220" stroke="#30363d" stroke-width="2"/>
+
+    <!-- Animated Data Stream Lines -->
+    <line class="flowing-line" x1="800" y1="100" x2="950" y2="70" stroke="#58a6ff" stroke-width="2"/>
+    <line class="flowing-line" x1="950" y1="70" x2="1050" y2="220" stroke="#bc8cff" stroke-width="2"/>
+
+    <!-- Nodes -->
+    <g transform="translate(800, 100)">
+      <rect x="-50" y="-18" width="100" height="36" rx="18" fill="url(#cardGrad)" stroke="#58a6ff" stroke-width="1.5"/>
+      <text x="0" y="5" text-anchor="middle" class="node-text">🧠 AI RAG</text>
+    </g>
+
+    <g transform="translate(950, 70)">
+      <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#cardGrad)" stroke="#bc8cff" stroke-width="1.5"/>
+      <text x="0" y="5" text-anchor="middle" class="node-text">📚 Team Wiki</text>
+    </g>
+
+    <g transform="translate(880, 180)">
+      <rect x="-60" y="-18" width="120" height="36" rx="18" fill="url(#cardGrad)" stroke="#3fb950" stroke-width="1.5"/>
+      <text x="0" y="5" text-anchor="middle" class="node-text">🗂️ Help Center</text>
+    </g>
+
+    <g transform="translate(1080, 120)">
+      <rect x="-50" y="-18" width="100" height="36" rx="18" fill="url(#cardGrad)" stroke="#d29922" stroke-width="1.5"/>
+      <text x="0" y="5" text-anchor="middle" class="node-text">⚡ Docs</text>
+    </g>
+
+    <g transform="translate(1050, 220)">
+      <rect x="-65" y="-18" width="130" height="36" rx="18" fill="url(#cardGrad)" stroke="#f778ba" stroke-width="1.5"/>
+      <text x="0" y="5" text-anchor="middle" class="node-text">🔍 Graph Search</text>
+    </g>
+  </g>
+
+  <!-- Left Floating Card Element -->
+  <g class="float-card-1" transform="translate(80, 240)">
+    <rect x="0" y="0" width="280" height="54" rx="12" fill="url(#cardGrad)" stroke="#30363d" stroke-width="1.5"/>
+    <circle cx="28" cy="27" r="14" fill="#1f6feb" opacity="0.3"/>
+    <text x="28" y="32" text-anchor="middle" font-size="14">🚀</text>
+    <text x="54" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto" font-size="12" font-weight="700" fill="#f0f6fc">SaaS &amp; Open-Source Ecosystem</text>
+    <text x="54" y="40" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto" font-size="11" fill="#8b949e">Curated Knowledge Hubs &amp; RAG</text>
+  </g>
+
+  <!-- FOREGROUND CONTENT: Header & Subtitle -->
+  <g transform="translate(80, 90)">
+    <!-- Top Category Pill -->
+    <rect x="0" y="0" width="260" height="28" rx="14" fill="#1f6feb" opacity="0.2"/>
+    <text x="14" y="18" class="tag">ENTERPRISE KNOWLEDGE MANAGEMENT</text>
+
+    <!-- Main Title -->
+    <text x="0" y="75" class="title">Awesome Enterprise KM 📚</text>
+    
+    <!-- Gradient Line Divider -->
+    <rect x="0" y="92" width="540" height="4" rx="2" fill="url(#accentGrad)"/>
+
+    <!-- Subtitle -->
+    <text x="0" y="125" class="subtitle">SaaS Platforms, Open-Source Wikis &amp; AI Knowledge Systems</text>
+  </g>
+
+</svg>
